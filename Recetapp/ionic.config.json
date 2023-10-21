@@ -1,0 +1,7 @@
+{
+  "name": "Recetapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

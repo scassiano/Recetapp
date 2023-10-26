@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonRow, IonCol, IonText, IonList, IonItem, IonLabel, IonButton, IonAlert, IonButtons } from '@ionic/react';
-import { search } from 'ionicons/icons';
+import { handRight, search } from 'ionicons/icons';
 import './Ingredients.css';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -50,17 +50,21 @@ const Ingredients: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
       <br></br>
-      <IonText>Estos fueron los ingredientes encontrados en la foto. Si algún elemento de la lista es un error, puedes oprimir en el boton eliminar para quitarlo.</IonText>
+      <IonCol className='ingredientes-text'>
+        <p style={{margin: '2em'}}>Estos fueron los ingredientes encontrados en la foto. Si algún elemento de la lista es un error, puedes oprimir en el boton eliminar para quitarlo.</p>
+      </IonCol>
       <br></br>
       <br></br>
-      <IonList>
-        {detectedIngredients.map((ingredient, index) => (
-            <IonItem>
-                <IonLabel>{ingredient}</IonLabel>
-                <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Eliminar</IonButton>
-            </IonItem>
-        ))}
-      </IonList>
+      <IonCol className='ingredients-container'>   
+        <IonList>
+          {detectedIngredients.map((ingredient, index) => (
+              <IonItem className='ingredientes-items'>
+                  <IonLabel>{ingredient}</IonLabel>
+                  <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Eliminar</IonButton>
+              </IonItem>
+          ))}
+        </IonList>
+      </IonCol>
       <IonRow>
         <IonCol style={{textAlign: "center"}}>
         <IonButton id="present-alert" color='orange'>Agregar ingrediente</IonButton>

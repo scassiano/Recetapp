@@ -1,5 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
-import { camera } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon, IonButton } from '@ionic/react';
+import { camera, arrowBack } from 'ionicons/icons';
 import './Scan.css';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
 import { useHistory } from 'react-router-dom';
@@ -19,7 +19,9 @@ const Scan: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Recetapp</IonTitle>
+          <IonButton color='orange' routerLink='/Home' routerDirection='back'>
+            <IonIcon icon={arrowBack}/>
+          </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

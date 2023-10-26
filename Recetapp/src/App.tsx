@@ -1,10 +1,28 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { App as CapApp } from '@capacitor/app';
+import { Browser } from '@capacitor/browser';
+import { useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { IonApp, 
+         IonRouterOutlet, 
+         setupIonicReact, 
+         IonMenu, 
+         IonToolbar, 
+         IonHeader,
+         IonTitle,
+         IonContent,
+         IonPage,
+         IonButtons,
+         IonMenuButton,
+         IonList,
+         IonItem,
+         IonIcon} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
-import Scan from './pages/Scan';
-import Processing from './pages/Processing'
-import Ingredients from './pages/Ingredients'
+import { cameraOutline } from 'ionicons/icons';
+import Home from './pages/Home/Home';
+import Scan from './pages/Scan/Scan';
+import Processing from './pages/Processing/Processing'
+import Ingredients from './pages/Ingregients/Ingredients'
 import SearchRecipe from './pages/SearchRecipe';
 
 /* Core CSS required for Ionic components to work properly */
@@ -31,25 +49,13 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route exact path="/scan">
-          <Scan />
-        </Route>
-        <Route exact path="/processing">
-          <Processing />
-        </Route>
-        <Route exact path="/ingredients">
-          <Ingredients />
-        </Route>
-        <Route exact path="/searchrecipe">
-          <SearchRecipe />
-        </Route>
+      <IonRouterOutlet id="RecetappMenu">
+        <Route exact path="/home" component={Home} /> 
+        <Route exact path="/scan" component={Scan} />
+        <Route exact path="/processing" component={Processing} />
+        <Route exact path="/ingredients" component={Ingredients} />
+        <Route exact path="/searchrecipe" component={SearchRecipe} />
+        <Redirect to="/home" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

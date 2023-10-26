@@ -66,7 +66,11 @@ const Home: React.FC = () => {
               <p className='home-parrafo'>Inovadora y hecha para curiosos y cocineros.</p>
             </IonCol>
             <IonCol className='home-col-btns'>
-              <IonButton className='home-btn' shape='round' color='orange' >
+              <IonButton 
+                className='home-btn' 
+                shape='round' 
+                color='orange' 
+                onClick={login}>
                 Iniciar Sesion
               </IonButton>
               <IonButton 
@@ -74,7 +78,7 @@ const Home: React.FC = () => {
                   shape='round' 
                   routerLink='/Scan' 
                   routerDirection='root' 
-                  onClick={login}>
+                  >
                 Escanear
               </IonButton>
             </IonCol>

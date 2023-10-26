@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonRow, IonCol, IonText, IonList, IonItem, IonLabel, IonButton, IonAlert, IonButtons } from '@ionic/react';
-import { handRight, search } from 'ionicons/icons';
+import {  home, handRight, search } from 'ionicons/icons';
 import './Ingredients.css';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -43,6 +43,9 @@ const Ingredients: React.FC = () => {
             <IonButton fill="solid" color='orange' onClick={() => searchRecipe()}>
               <IonIcon slot="end" icon={search}></IonIcon>
               Buscar receta
+            </IonButton>
+            <IonButton routerLink='/home'>
+              <IonIcon icon={home} />
             </IonButton>
           </IonButtons>
 

@@ -53,7 +53,7 @@ const Home: React.FC = () => {
           <IonGrid>
             <IonCol>
               <IonCard color='orange'> 
-                <IonTitle className='home-title'>Bienvenido a Recetapp</IonTitle>
+                <IonTitle className='home-title'>Bienvenid@ a Recetapp</IonTitle>
               </IonCard>       
             </IonCol>
             <IonCol className='home-img'>
@@ -62,24 +62,24 @@ const Home: React.FC = () => {
               </IonCard>
             </IonCol>
             <IonCol>
-              <p className='home-parrafo'>Bienvenido a tu App</p>
-              <p className='home-parrafo'>Inovadora y hecha para curiosos y cocineros.</p>
+              <p className='home-parrafo'>Una aplicación innovadora, creada para los curiosos y para los cocineros.</p>
             </IonCol>
             <IonCol className='home-col-btns'>
-              <IonButton 
+              <IonButton
                 className='home-btn' 
                 shape='round' 
                 color='orange' 
                 onClick={login}>
-                Iniciar Sesion
+                Hacer login
               </IonButton>
               <IonButton 
+                  className='ion-text-wrap'
                   color='orange' 
                   shape='round' 
                   routerLink='/Scan' 
                   routerDirection='root' 
                   >
-                Escanear
+                Escanear ingredientes
               </IonButton>
             </IonCol>
           </IonGrid>

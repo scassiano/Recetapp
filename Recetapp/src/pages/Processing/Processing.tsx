@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonProgressBar, IonCol } from '@ionic/react';
 import './Processing.css';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -34,7 +34,11 @@ const Processing: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <img src={location.state.takenPhoto.webPath}/>
+        <IonCol>
+          <p style={{margin: '2em'}}>Estamos detectando los ingredientes en la imagen, espera un momento...</p>
+        </IonCol>
       </IonContent>
+      
     </IonPage>
   );
 };

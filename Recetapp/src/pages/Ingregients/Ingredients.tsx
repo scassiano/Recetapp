@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 
 
 const Ingredients: React.FC = () => {
+    //Creamos un diccionario que permite traducir los elementos detectados de ingles a espanol
+    const diccionario = {banana:"Banano", apple:"Manzana", orange:"Naranja",broccoli:"Brócoli", carrot:"Zanahoria"}
+    const palabrasValidas = ["banana","apple","orange","broccoli","carrot"]
     const [detectedIngredients, setDetectedIngredients]= useState([])
     const history = useHistory();
     const location = useLocation();
@@ -18,7 +21,9 @@ const Ingredients: React.FC = () => {
     useEffect(() => {
         let aux = []
         location.state.ingredients.forEach(element => {
-            aux.push(element.class)
+          if (palabrasValidas.includes(element.class)){
+            aux.push(diccionario[element.class])
+          }
         });
         aux = Array.from(new Set(aux))
         //No dejar duplicados
@@ -54,7 +59,8 @@ const Ingredients: React.FC = () => {
       <IonContent fullscreen>
       <br></br>
       <IonCol className='ingredientes-text'>
-        <p style={{margin: '2em'}}>Estos fueron los ingredientes encontrados en la foto. Si algún elemento de la lista es un error, puedes oprimir en el boton eliminar para quitarlo.</p>
+        <p style={{margin: '2em'}}>Estos fueron los ingredientes encontrados en la foto. Si algún ingrediente en la lista es un error, puede eliminarse con el boton "Eliminar".</p>
+        <p style={{margin: '2em'}}>Si algun ingrediente no fue detectado, puedes agregarlo presionando el boton "Agregar ingrediente".</p>
       </IonCol>
       <br></br>
       <br></br>
@@ -63,7 +69,7 @@ const Ingredients: React.FC = () => {
           {detectedIngredients.map((ingredient, index) => (
               <IonItem className='ingredientes-items'>
                   <IonLabel>{ingredient}</IonLabel>
-                  <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Eliminar</IonButton>
+                  <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Excluir</IonButton>
               </IonItem>
           ))}
         </IonList>
@@ -72,7 +78,7 @@ const Ingredients: React.FC = () => {
         <IonCol style={{textAlign: "center"}}>
         <IonButton id="present-alert" color='orange'>Agregar ingrediente</IonButton>
       <IonAlert
-        header="Agregar ingrediente"
+        header="Adicionar ingrediente"
         trigger="present-alert"
         buttons={[
           {
@@ -83,7 +89,7 @@ const Ingredients: React.FC = () => {
             },
           },
           {
-            text: 'Agregar',
+            text: 'Adicionar',
             role: 'confirm',
           },
         ]}

@@ -23,7 +23,7 @@ import Home from './pages/Home/Home';
 import Scan from './pages/Scan/Scan';
 import Processing from './pages/Processing/Processing'
 import Ingredients from './pages/Ingregients/Ingredients'
-import SearchRecipe from './pages/SearchRecipe';
+import SearchRecipe from './pages/SearchRecipe/SearchRecipe';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';

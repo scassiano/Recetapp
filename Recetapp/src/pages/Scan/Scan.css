@@ -15,3 +15,19 @@
 	--ion-color-shade: var(--ion-color-orange-shade);
 	--ion-color-tint: var(--ion-color-orange-tint);
 }
+
+.scan-instructions{
+	margin-top: 30px;
+	display: block;
+	text-align: justify;
+	align-items: center;
+	font-size: 15px;
+}
+
+.scan-title{
+	margin-top: 10px;
+	display: block;
+	text-align: center;
+	align-items: center;
+	font-size: 20px;
+}

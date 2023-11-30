@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon, IonButton, IonTextarea } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon, IonButton, IonTextarea, IonText } from '@ionic/react';
 import { camera, arrowBack } from 'ionicons/icons';
 import './Scan.css';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
@@ -24,14 +24,25 @@ const Scan: React.FC = () => {
           </IonButton>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen={true} className='ion-padding'>
-      <IonTextarea autoGrow={true} readonly={true} aria-label="Instrucciones" value="Oprime el boton en la parte inferior de la pantalla para tomar una fotografia de los ingredientes que quieres utilizar."></IonTextarea>
-        <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton color="orange" onClick={() => takePhoto()}>
-            <IonIcon icon={camera}></IonIcon>
-          </IonFabButton>
-        </IonFab>
-      </IonContent>
+         <b>
+          <IonText className='scan-title' color="medium">Crear una nueva receta
+          </IonText>
+        </b>
+
+        <IonTextarea autoGrow={true} readonly={true} aria-label="Instrucciones">
+          <IonText className='scan-instructions' color="medium">Oprime el boton en la parte inferior de la pantalla para tomar una fotografia de los ingredientes que quieres utilizar en tu receta.
+          </IonText>
+        </IonTextarea>
+
+          <IonFab vertical="bottom" horizontal="center" slot="fixed">
+            <IonFabButton color="orange" onClick={() => takePhoto()}>
+              <IonIcon icon={camera}></IonIcon>
+            </IonFabButton>
+          </IonFab>
+
+        </IonContent>
     </IonPage>
   );
 };

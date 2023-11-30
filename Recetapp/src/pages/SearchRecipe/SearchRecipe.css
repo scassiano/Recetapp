@@ -15,3 +15,14 @@
 	--ion-color-shade: var(--ion-color-orange-shade);
 	--ion-color-tint: var(--ion-color-orange-tint);
 }
+
+.search-text-color {
+	color: #808289;
+}
+
+.search-add-btn{
+	grid-template-rows: auto;
+	display: block;
+	text-align: center;
+	align-items: center;
+}

@@ -34,8 +34,8 @@ const Processing: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <img src={location.state.takenPhoto.webPath}/>
-        <IonCol>
-          <p style={{margin: '2em'}}>Estamos detectando los ingredientes en la imagen, espera un momento...</p>
+        <IonCol color='medium'>
+          <p style={{margin: '2em', color:"#808289", textAlign:'justify'}}>Estamos detectando los ingredientes en tu fotografía. Por favor espera un momento...</p>
         </IonCol>
       </IonContent>
       

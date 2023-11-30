@@ -23,7 +23,9 @@ import Home from './pages/Home/Home';
 import Scan from './pages/Scan/Scan';
 import Processing from './pages/Processing/Processing'
 import Ingredients from './pages/Ingregients/Ingredients'
-import SearchRecipe from './pages/SearchRecipe/SearchRecipe';
+import SearchRecipe from './pages/SearchRecipe/SearchRecipe'
+import MyRecipes from './pages/MyRecipes/MyRecipes'
+import ViewRecipe from './pages/ViewRecipe/ViewRecipe';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -55,6 +57,8 @@ const App: React.FC = () => (
         <Route exact path="/processing" component={Processing} />
         <Route exact path="/ingredients" component={Ingredients} />
         <Route exact path="/searchrecipe" component={SearchRecipe} />
+        <Route exact path="/myrecipes" component={MyRecipes}/>
+        <Route exact path="/viewrecipe" component={ViewRecipe}/>
         <Redirect to="/home" />
       </IonRouterOutlet>
     </IonReactRouter>

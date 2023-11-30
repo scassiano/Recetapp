@@ -43,7 +43,7 @@ const Ingredients: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Recetapp</IonTitle>
+          <IonTitle color="medium">Recetapp</IonTitle>
           <IonButtons slot="end">
             <IonButton fill="solid" color='orange' onClick={() => searchRecipe()}>
               <IonIcon slot="end" icon={search}></IonIcon>
@@ -57,19 +57,18 @@ const Ingredients: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-      <br></br>
       <IonCol className='ingredientes-text'>
-        <p style={{margin: '2em'}}>Estos fueron los ingredientes encontrados en la foto. Si algún ingrediente en la lista es un error, puede eliminarse con el boton "Eliminar".</p>
-        <p style={{margin: '2em'}}>Si algun ingrediente no fue detectado, puedes agregarlo presionando el boton "Agregar ingrediente".</p>
+        <p style={{margin: '2em', color:"#808289"}}>Estos fueron los ingredientes encontrados en la foto. Si algún ingrediente en la lista es un error, puede eliminarse con el boton "Eliminar".</p>
+        <p style={{margin: '2em', color:"#808289"}}>Si algun ingrediente no fue detectado, puedes agregarlo presionando el boton "Agregar ingrediente".</p>
+        <p style={{margin: '2em', color:"#808289"}}>Una vez tengas todos los ingredientes, oprime el boton de arriba para buscar una receta.</p>
       </IonCol>
-      <br></br>
-      <br></br>
+
       <IonCol className='ingredients-container'>   
         <IonList>
           {detectedIngredients.map((ingredient, index) => (
               <IonItem className='ingredientes-items'>
                   <IonLabel>{ingredient}</IonLabel>
-                  <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Excluir</IonButton>
+                  <IonButton onClick={() => deleteIngredient(ingredient)} color='danger'>Borrar</IonButton>
               </IonItem>
           ))}
         </IonList>
